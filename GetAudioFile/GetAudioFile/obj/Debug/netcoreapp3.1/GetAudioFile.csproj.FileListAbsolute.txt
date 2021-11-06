@@ -1,0 +1,15 @@
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.exe
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.deps.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.runtimeconfig.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.runtimeconfig.dev.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\GetAudioFile.pdb
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.csprojAssemblyReference.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.AssemblyInfoInputs.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.AssemblyInfo.cs
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.csproj.CoreCompileInputs.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.pdb
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.genruntimeconfig.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\GetAudioFile\GetAudioFile\obj\Debug\netcoreapp3.1\GetAudioFile.csproj.CopyComplete
