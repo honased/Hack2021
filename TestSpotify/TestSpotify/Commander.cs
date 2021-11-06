@@ -19,7 +19,8 @@ namespace TestSpotify
         {
             None,
             PlaySong,
-            PlayPlaylist
+            PlayPlaylist,
+            QueueSong
         }
 
         private struct ParseStruct
@@ -57,6 +58,15 @@ namespace TestSpotify
                             {
                                 state = ParseState.ReadSong;
                                 goal = ParseGoal.PlaySong;
+                            }
+                        }
+                        if(token == "queue")
+                        {
+                            if (tokens.Length - i <= 1) return;
+                            else
+                            {
+                                state = ParseState.ReadSong;
+                                goal = ParseGoal.QueueSong;
                             }
                         }
                         break;
@@ -116,6 +126,10 @@ namespace TestSpotify
                 case ParseGoal.PlayPlaylist:
                     await SpotifyCommands.PlayPlaylist(parseData.song);
                     break;
+                case ParseGoal.QueueSong:
+                    await SpotifyCommands.QueueSong(parseData.song, parseData.artist);
+                    break;
+
             }
         }
     }

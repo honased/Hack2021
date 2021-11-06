@@ -18,3 +18,23 @@ C:\Users\honas\Documents\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.
 C:\Users\honas\Documents\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.pdb
 C:\Users\honas\Documents\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.genruntimeconfig.cache
 C:\Users\honas\Documents\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.exe
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.deps.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.runtimeconfig.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.runtimeconfig.dev.json
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\TestSpotify.pdb
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\EmbedIO.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\SpotifyAPI.Web.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\SpotifyAPI.Web.Auth.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\bin\Debug\netcoreapp3.1\Swan.Lite.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.csprojAssemblyReference.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.AssemblyInfoInputs.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.AssemblyInfo.cs
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.csproj.CoreCompileInputs.cache
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.csproj.CopyComplete
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.dll
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.pdb
+C:\Users\mawit\OneDrive\Documents\Hack Kstate 2021\Hack2021\TestSpotify\TestSpotify\obj\Debug\netcoreapp3.1\TestSpotify.genruntimeconfig.cache
