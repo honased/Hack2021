@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\honas\\Documents\\Hack2021\\GetAudioFile\\GetAudioFile\\GetAudioFile.csproj": {}
+    "C:\\Users\\honas\\Documents\\Hack2021\\TestSpotify\\TestSpotify\\TestSpotify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\honas\\Documents\\Hack2021\\GetAudioFile\\GetAudioFile\\GetAudioFile.csproj": {
+    "C:\\Users\\honas\\Documents\\Hack2021\\TestSpotify\\TestSpotify\\TestSpotify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\honas\\Documents\\Hack2021\\GetAudioFile\\GetAudioFile\\GetAudioFile.csproj",
-        "projectName": "GetAudioFile",
-        "projectPath": "C:\\Users\\honas\\Documents\\Hack2021\\GetAudioFile\\GetAudioFile\\GetAudioFile.csproj",
+        "projectUniqueName": "C:\\Users\\honas\\Documents\\Hack2021\\TestSpotify\\TestSpotify\\TestSpotify.csproj",
+        "projectName": "TestSpotify",
+        "projectPath": "C:\\Users\\honas\\Documents\\Hack2021\\TestSpotify\\TestSpotify\\TestSpotify.csproj",
         "packagesPath": "C:\\Users\\honas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\honas\\Documents\\Hack2021\\GetAudioFile\\GetAudioFile\\obj\\",
+        "outputPath": "C:\\Users\\honas\\Documents\\Hack2021\\TestSpotify\\TestSpotify\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -45,9 +45,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Newtonsoft.Json": {
+            "RestSharp": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[106.13.0, )"
+            },
+            "SpotifyAPI.Web": {
+              "target": "Package",
+              "version": "[6.2.2, )"
+            },
+            "SpotifyAPI.Web.Auth": {
+              "target": "Package",
+              "version": "[6.2.2, )"
             }
           },
           "imports": [

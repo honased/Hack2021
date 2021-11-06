@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace GetAudioFile
             client.BaseAddress = new Uri("https://api.assemblyai.com/v2/");
             client.DefaultRequestHeaders.Add("authorization", "ffb38b9629a448c0844badae0a951659");
 
-            string jsonResult = SendFile(client, "C:/Users/mawit/OneDrive/Documents/Hack Kstate 2021/Hack2021/TakeMyBreath.mp3").Result;
+            string jsonResult = SendFile(client, "what_you_need.mp3").Result;
             System.Console.WriteLine(jsonResult);
             var jsonObj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(jsonResult);
 
@@ -41,7 +42,7 @@ namespace GetAudioFile
                 Console.WriteLine(responseJson.GetType());
                 var tranID = (Newtonsoft.Json.Linq.JObject) JsonConvert.DeserializeObject(responseJson);
                 Console.WriteLine(responseJson);
-                url = "https://api.assemblyai.com/v2/transcript/ " + tranID;
+                url = "https://api.assemblyai.com/v2/transcript/" + ((JValue)tranID["id"]).ToString();
 
                 //httpClient.DefaultRequestHeaders.Add("Authorization", "ffb38b9629a448c0844badae0a951659");
                 //httpClient.DefaultRequestHeaders.Add("Accepts", "application/json");
@@ -57,11 +58,23 @@ namespace GetAudioFile
                 httpClient.DefaultRequestHeaders.Add("Authorization", "ffb38b9629a448c0844badae0a951659");
                 httpClient.DefaultRequestHeaders.Add("Accepts", "application/json");
 
-                HttpResponseMessage response = await httpClient.GetAsync("https://api.assemblyai.com/v2/transcript/YOUR-TRANSCRIPT-ID-HERE");
-                response.EnsureSuccessStatusCode();
+                var status = false;
+                string text = "";
 
-                var responseJson = await response.Content.ReadAsStringAsync();
+                do
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
 
+                    var responseJson = await response.Content.ReadAsStringAsync();
+                    JObject obj = (JObject)JsonConvert.DeserializeObject(responseJson);
+                    status = ((JValue)obj["status"]).Value.ToString().Trim().ToLower() == "completed";
+                    text = ((JValue)obj["text"]).Value?.ToString();
+                    //obj["status"]
+                } while (!status);
+
+                
+                Console.WriteLine(text);
             }
         }
 
