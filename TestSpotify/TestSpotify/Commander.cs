@@ -11,13 +11,15 @@ namespace TestSpotify
         {
             Initial,
             ReadSong,
-            ReadArtist
+            ReadArtist,
+            ReadPlaylist
         }
 
         private enum ParseGoal
         {
             None,
-            PlaySong
+            PlaySong,
+            PlayPlaylist
         }
 
         private struct ParseStruct
@@ -44,8 +46,18 @@ namespace TestSpotify
                     case ParseState.Initial:
                         if(token == "play")
                         {
-                            state = ParseState.ReadSong;
-                            goal = ParseGoal.PlaySong;
+                            if (tokens.Length - i <= 1) return;
+                            else if(tokens[i + 1].Trim().ToLower() == "playlist")
+                            {
+                                state = ParseState.ReadPlaylist;
+                                goal = ParseGoal.PlayPlaylist;
+                                i += 1;
+                            }
+                            else
+                            {
+                                state = ParseState.ReadSong;
+                                goal = ParseGoal.PlaySong;
+                            }
                         }
                         break;
 
@@ -63,8 +75,12 @@ namespace TestSpotify
                         }
                         break;
 
+                    case ParseState.ReadPlaylist:
+                        builder.Append(token + " ");
+                        break;
+
                     case ParseState.ReadArtist:
-                        builder.Append(token);
+                        builder.Append(token + " ");
                         break;
                 }
             }
@@ -73,12 +89,17 @@ namespace TestSpotify
             {
                 case ParseState.ReadSong:
                     if (builder.Length == 0) return;
-                    parseData.song = builder.ToString();
+                    parseData.song = builder.ToString().Trim();
                     break;
 
                 case ParseState.ReadArtist:
                     if (builder.Length == 0) return;
-                    parseData.artist = builder.ToString();
+                    parseData.artist = builder.ToString().Trim();
+                    break;
+
+                case ParseState.ReadPlaylist:
+                    if (builder.Length == 0) return;
+                    parseData.song = builder.ToString().Trim();
                     break;
             }
 
@@ -90,6 +111,10 @@ namespace TestSpotify
 
                 case ParseGoal.PlaySong:
                     await SpotifyCommands.PlaySong(parseData.song, parseData.artist);
+                    break;
+
+                case ParseGoal.PlayPlaylist:
+                    await SpotifyCommands.PlayPlaylist(parseData.song);
                     break;
             }
         }

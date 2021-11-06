@@ -1,0 +1,13 @@
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.exe
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.deps.json
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.runtimeconfig.json
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.runtimeconfig.dev.json
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.dll
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\bin\Debug\netcoreapp3.1\TestMic.pdb
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.csprojAssemblyReference.cache
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.AssemblyInfoInputs.cache
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.AssemblyInfo.cs
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.csproj.CoreCompileInputs.cache
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.dll
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.pdb
+C:\Users\honas\Documents\Hack2021\TestSpotify\TestMic\obj\Debug\netcoreapp3.1\TestMic.genruntimeconfig.cache
