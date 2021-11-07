@@ -17,7 +17,7 @@ namespace TestSpotify
             client = sc;
             if(client == null)
             {
-                client = new SpotifyClient("BQDfJxlsoPaXKmewr1-s2MX7hxyRQLqbC1vw8WWUzPWxPhJTkT-yRMPREH66tKj5Wadv5jTUdRGjdMehUOTSxy-FO4a6kyJYpD-pkAg8MOLV-ZfqgE5HMvT1mJT_C2f4fTGOTXAUaPRbZ5_2TEPidXcN11uvxmt6f3NV2YrnhKhZu7m6QEoqeFlU51XV1QitlPTEA4g8bri_x-LH-Ud_QGZ-ro69Xc8QpyfqUmfkuA8Z2V8eoZMn8EI");
+                client = new SpotifyClient("BQDFaH1UFj98hT6Nnw2bvCP61w6krjtvn5r_wz1iS1vWzH-LGjuTmXBkPu-iuXu8AA_Y2RRqRMb9sGyVi8it6bMZslSZNkfa6b5gP2Vfl8u-WI2zpU1wnwF53-viv7e4tUhrPLEuZ9T6fJrkMWEoR28l_kt0AXAFovE32gzkk4YMUm6YcNDWDWlwXlxduIIAHlPmqA8nADyy0Uy5m3IKdWkHLswzPw0aAI7W_mTZCvF6bPLrgwZ2Vno");
             }
             var devices = client.Player.GetAvailableDevices().Result;
             if (devices.Devices.Count <= 0) throw new Exception();
@@ -81,18 +81,8 @@ namespace TestSpotify
             if (artist != null)
             {
                 artist = artist.Trim().ToLower();
-                List<FullTrack> returnTracks = new List<FullTrack>();
-                foreach(FullTrack ft in item.Tracks.Items)
-                {
-                    foreach(SimpleArtist sa in ft.Artists)
-                    {
-                        if(sa.Name.Trim().ToLower().Contains(artist))
-                        {
-                            returnTracks.Add(ft);
-                            break;
-                        }
-                    }
-                }
+                List<FullTrack> returnTracks;
+                returnTracks = item.Tracks.Items.OrderBy(x => WordDistance(x.Artists.Aggregate((y, z) => (WordDistance(y.Name.ToLower(), artist) < WordDistance(z.Name.ToLower(), artist) ? y : z)).Name.ToLower(), artist)).ToList();
                 return returnTracks;
             }
             else return item.Tracks.Items;

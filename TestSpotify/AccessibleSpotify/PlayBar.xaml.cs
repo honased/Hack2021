@@ -93,22 +93,27 @@ namespace AccessibleSpotify
                 newTask.Wait();
                 string text = newTask.Result;
 
-                var newTask2 = Task.Run(() => Commander.Command(text));
-                newTask2.Wait();
-                bool remainPaused = newTask2.Result;
-
-                if(this.GetParent<MainWindow>() is MainWindow window)
-                {
-                    window.textCollection.Add(text);
-                }
-
-                if(originallyPlaying && !remainPaused)
-                {
-                    var task = Task.Run(() => SpotifyCommands.SetPlaying(true));
-                    task.Wait();
-                }
+                ExecuteCommand(text, originallyPlaying);
 
                 button.IsEnabled = true;
+            }
+        }
+
+        public void ExecuteCommand(string text, bool originallyPlaying)
+        {
+            var newTask2 = Task.Run(() => Commander.Command(text));
+            newTask2.Wait();
+            bool remainPaused = newTask2.Result;
+
+            if (this.GetParent<MainWindow>() is MainWindow window)
+            {
+                window.textCollection.Add(text);
+            }
+
+            if (originallyPlaying && !remainPaused)
+            {
+                var task = Task.Run(() => SpotifyCommands.SetPlaying(true));
+                task.Wait();
             }
         }
 

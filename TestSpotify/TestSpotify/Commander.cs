@@ -65,7 +65,7 @@ namespace TestSpotify
                                 goal = ParseGoal.PlaySong;
                             }
                         }
-                        else if(token == "queue")
+                        else if(token == "add")
                         {
                             if (tokens.Length - i <= 1) return false;
                             else

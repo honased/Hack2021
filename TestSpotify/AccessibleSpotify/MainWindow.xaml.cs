@@ -43,6 +43,14 @@ namespace AccessibleSpotify
             song.Artists = fullTrack.Artists.Select(x => x.Name).ToList();
             song.Uri = fullTrack.Album.Images[0].Url;
             Bar.DataContext = new PlayingStatus() { Song = song, IsPlaying = status.IsPlaying };
+            DataContext = Bar.DataContext;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string text = inputBox.Text.Trim();
+            inputBox.Text = "";
+            Bar.ExecuteCommand(text, false);
         }
     }
 }
