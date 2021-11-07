@@ -12,7 +12,8 @@ namespace TestSpotify
             Initial,
             ReadSong,
             ReadArtist,
-            ReadPlaylist
+            ReadPlaylist,
+
         }
 
         private enum ParseGoal
@@ -20,7 +21,7 @@ namespace TestSpotify
             None,
             PlaySong,
             PlayPlaylist,
-            QueueSong
+            QueueSong,
         }
 
         private struct ParseStruct
@@ -69,6 +70,12 @@ namespace TestSpotify
                                 goal = ParseGoal.QueueSong;
                             }
                         }
+                        if(token == "skip")
+                        {
+                            await SpotifyCommands.SkipSong();
+                            return;
+
+                        }
                         break;
 
                     case ParseState.ReadSong:
@@ -92,6 +99,7 @@ namespace TestSpotify
                     case ParseState.ReadArtist:
                         builder.Append(token + " ");
                         break;
+                    
                 }
             }
 
@@ -129,7 +137,7 @@ namespace TestSpotify
                 case ParseGoal.QueueSong:
                     await SpotifyCommands.QueueSong(parseData.song, parseData.artist);
                     break;
-
+                
             }
         }
     }

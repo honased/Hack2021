@@ -20,6 +20,11 @@ namespace TestSpotify
             device = devices.Devices[0].Id;
         }
 
+        public static async Task SkipSong()
+        {
+            await client.Player.SkipNext();
+        }
+
         public static async Task QueueSong(string song, string artist = null)
         {
             var tracks = FindSong(song, artist).Result;
@@ -31,8 +36,7 @@ namespace TestSpotify
             {
                 var specificTrack = tracks[0].Uri;
                 var request = new PlayerAddToQueueRequest(specificTrack);
-                //request.uri = new List<string>();
-                //request.uri.Add(specificTrack);
+                
                 request.DeviceId = device;
                 await client.Player.AddToQueue(request);
             }

@@ -8,9 +8,9 @@ namespace TestSpotify
     {
         static async Task Main(string[] args)
         {
-            var spotify = new SpotifyClient("BQA31oNZnIUlukMUtZ45ItyNd20kap9TExbUHGBKGTNmsT6dNCZ89yVgUco_-f4Tmcp3Mc9LluyomJ-zjntYGR_dTRacFXVhjj25STqOLQC5RBc_mPR9jfZPxYlsmOzK1jmFzfPybEP_a3bhOgdjV4PhvaE3Otly0qL_Jt5ESVhge8m3Ip5UBSYgGF5FOXGZ5uSy3G70lVd4mZpLWpI");
+            var spotify = new SpotifyClient("BQD4ovKpQrjzxcYHTcB2PrVppcrRQHRv37KtvqQ60yaOTmVbO-5UgKaWjEn9Lk6EUkfz5rRF2d15QV-K0qrNHvTzS3mdBDM1FavNJJ-gLrSIDbbNMVVNhWgkAEqo-nYNllmh78qnVJW2ZVcnlFsQ7XHzHx9Y79ATQzSt700_28zRkPj0v3venVyLQ0bcAqOuyPsQKkeYr2m0mK3Y-WM");
             SpotifyCommands.Initialize(spotify);
-            await Commander.Command("queue waves by kanye west");
+            await Commander.Command("skip queue the one unotheactivist");
             //await SpotifyCommands.SkipTrackNext();
             //await SpotifyCommands.SetPlaying(true);
         }
