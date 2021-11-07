@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AccessibleSpotify
 {
-    public class PlayingStatus
+    public class PlayingStatus : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -60,7 +60,7 @@ namespace AccessibleSpotify
         {
             get
             {
-                return (playing) ? "Pause" : "Play";
+                return (!playing) ? "https://static.thenounproject.com/png/117815-200.png" : "https://w7.pngwing.com/pngs/879/589/png-transparent-pause-logo-computer-icons-button-media-player-pause-button-rectangle-black-internet-thumbnail.png";
             }
         }
     }

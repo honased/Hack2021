@@ -11,8 +11,7 @@ namespace TestMic
     {
         public static async Task Main(string[] args)
         {
-            var spotify = new SpotifyClient("BQBoZn4C4aWQJnQ_GANP65Y2k78cLQ-kHJu_S9yh9H5jIehim9uCnQVP2rwpy_GeEBeKdbshTH2PLtt4o_DvuVsmMOuXAstiX3kN5N_xDZEE1ttVbNafzhL-_5luJ9_pnQNRPhXsToiE8I6RIdBmWSpfKezjJ2JAWJZ7qYyxedJQovvIi06Qx94knBg_OjNXzx-ih1wI4uIUSzy2tWe_CZzhRogz7qWDTce4CrZGjYdfZb-Uv55jXOE");
-            SpotifyCommands.Initialize(spotify);
+            SpotifyCommands.Initialize();
 
             //await Commander.Command("Play Brexit in America");
 

@@ -6,4 +6,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestMic\TestMic.csproj" />
+    <ProjectReference Include="..\TestSpotify\TestSpotify.csproj" />
+  </ItemGroup>
+
 </Project>

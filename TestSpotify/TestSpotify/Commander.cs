@@ -30,7 +30,7 @@ namespace TestSpotify
             public string artist;
         }
 
-        public static async Task Command(string command)
+        public static async Task<bool> Command(string command)
         {
             string[] tokens = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             ParseState state = ParseState.Initial;
@@ -48,8 +48,12 @@ namespace TestSpotify
                     case ParseState.Initial:
                         if(token == "play")
                         {
-                            if (tokens.Length - i <= 1) return;
-                            else if(tokens[i + 1].Trim().ToLower() == "playlist")
+                            if (tokens.Length - i <= 1)
+                            {
+                                await SpotifyCommands.SetPlaying(true);
+                                return false;
+                            }
+                            else if (tokens[i + 1].Trim().ToLower() == "playlist")
                             {
                                 state = ParseState.ReadPlaylist;
                                 goal = ParseGoal.PlayPlaylist;
@@ -63,7 +67,7 @@ namespace TestSpotify
                         }
                         else if(token == "queue")
                         {
-                            if (tokens.Length - i <= 1) return;
+                            if (tokens.Length - i <= 1) return false;
                             else
                             {
                                 state = ParseState.ReadSong;
@@ -73,8 +77,29 @@ namespace TestSpotify
                         else if(token == "skip")
                         {
                             await SpotifyCommands.SkipSong();
-                            return;
-
+                            return false;
+                        }
+                        else if(token == "pause" || token == "paws" || token == "stop")
+                        {
+                            await SpotifyCommands.SetPlaying(false);
+                            return true;
+                        }
+                        else if(token == "resume")
+                        {
+                            await SpotifyCommands.SetPlaying(true);
+                            return false;
+                        }
+                        else if(token == "previous")
+                        {
+                            try
+                            {
+                                await SpotifyCommands.SkipTrackPrevious();
+                            }
+                            catch
+                            {
+                                await SpotifyCommands.SetProgress(0);
+                            }
+                            return false;
                         }
                         else
                         {
@@ -85,7 +110,7 @@ namespace TestSpotify
                     case ParseState.ReadSong:
                         if(token == "by")
                         {
-                            if (builder.Length <= 0) return;
+                            if (builder.Length <= 0) return false;
                             parseData.song = builder.ToString();
                             builder.Clear();
                             state = ParseState.ReadArtist;
@@ -110,17 +135,17 @@ namespace TestSpotify
             switch(state)
             {
                 case ParseState.ReadSong:
-                    if (builder.Length == 0) return;
+                    if (builder.Length == 0) return false;
                     parseData.song = builder.ToString().Trim();
                     break;
 
                 case ParseState.ReadArtist:
-                    if (builder.Length == 0) return;
+                    if (builder.Length == 0) return false;
                     parseData.artist = builder.ToString().Trim();
                     break;
 
                 case ParseState.ReadPlaylist:
-                    if (builder.Length == 0) return;
+                    if (builder.Length == 0) return false;
                     parseData.song = builder.ToString().Trim();
                     break;
             }
@@ -129,7 +154,7 @@ namespace TestSpotify
             {
                 case ParseGoal.None:
                     // Do nothing
-                    await SpotifyCommands.PlaySong(builder.ToString().Trim().ToLower(), null);
+                    //await SpotifyCommands.PlaySong(builder.ToString().Trim().ToLower(), null);
                     break;
 
                 case ParseGoal.PlaySong:
@@ -144,6 +169,8 @@ namespace TestSpotify
                     break;
                 
             }
+
+            return false;
         }
     }
 }

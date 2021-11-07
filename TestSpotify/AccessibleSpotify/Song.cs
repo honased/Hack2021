@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace AccessibleSpotify
 {
-    public class Song
+    public class Song : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string name;
         private List<string> artists;
         private int maximum = 100;
+        private string uri;
 
         public string Name
         {
@@ -24,6 +26,33 @@ namespace AccessibleSpotify
                 {
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
                 }
+            }
+        }
+
+        public string Uri
+        {
+            get => uri;
+            set
+            {
+                bool invoke = uri != value;
+                uri = value;
+                if (invoke)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Uri"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Image"));
+                }
+            }
+        }
+
+        public BitmapImage Image
+        {
+            get
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(uri, UriKind.Absolute);
+                bitmap.EndInit();
+                return bitmap;
             }
         }
 

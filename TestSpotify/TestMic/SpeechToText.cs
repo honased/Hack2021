@@ -35,6 +35,7 @@ namespace TestMic
                     waveIn.StartRecording();
                     waveIn.DataAvailable += WaveIn_DataAvailable;
                     string text = "";
+                    Console.Beep();
                     text = await Task.Run(() => Receive());
                     waveIn.StopRecording();
 

@@ -12,9 +12,13 @@ namespace TestSpotify
         private static SpotifyClient client = null;
         private static string device = "";
 
-        public static void Initialize(SpotifyClient sc)
+        public static void Initialize(SpotifyClient sc=null)
         {
             client = sc;
+            if(client == null)
+            {
+                client = new SpotifyClient("BQDfJxlsoPaXKmewr1-s2MX7hxyRQLqbC1vw8WWUzPWxPhJTkT-yRMPREH66tKj5Wadv5jTUdRGjdMehUOTSxy-FO4a6kyJYpD-pkAg8MOLV-ZfqgE5HMvT1mJT_C2f4fTGOTXAUaPRbZ5_2TEPidXcN11uvxmt6f3NV2YrnhKhZu7m6QEoqeFlU51XV1QitlPTEA4g8bri_x-LH-Ud_QGZ-ro69Xc8QpyfqUmfkuA8Z2V8eoZMn8EI");
+            }
             var devices = client.Player.GetAvailableDevices().Result;
             if (devices.Devices.Count <= 0) throw new Exception();
             device = devices.Devices[0].Id;
@@ -51,6 +55,11 @@ namespace TestSpotify
         public static async Task SkipTrackPrevious()
         {
             await client.Player.SkipPrevious();
+        }
+
+        public static async Task SetProgress(int progress)
+        {
+            await client.Player.SeekTo(new PlayerSeekToRequest(progress));
         }
 
         public static async Task SetPlaying(bool playing)
@@ -118,6 +127,12 @@ namespace TestSpotify
                 request.DeviceId = device;
                 await client.Player.ResumePlayback(request);
             }
+        }
+
+        public static async Task<CurrentlyPlaying> GetCurrentStatus()
+        {
+            var current = await client.Player.GetCurrentlyPlaying(new PlayerCurrentlyPlayingRequest());
+            return current;
         }
 
         private static int WordDistance(string a, string b)

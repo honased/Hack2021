@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:AccessibleSpotify"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <local:PlayBar x:Name="Bar" DockPanel.Dock="Bottom"/>
+        <Grid Name="Container">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="2" x:Name="commandList" FontSize="20"/>
+        </Grid>
+    </DockPanel>
 </Window>

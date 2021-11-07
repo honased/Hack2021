@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\honas\Documents\Hack2021\TestSpotify\AccessibleSpotify\App.xaml
-21045799734
+3-133926038
 
-8613011086
-192-1533232326
-MainWindow.xaml;PlayBar.xaml;
+101137924468
+213-1568417695
+MainWindow.xaml;PlayBar.xaml;SongDisplay.xaml;
 
-False
+True
 
