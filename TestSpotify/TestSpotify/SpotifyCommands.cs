@@ -94,7 +94,7 @@ namespace TestSpotify
             var tracks = FindSong(song, artist).Result;
             if(tracks.Count <= 0)
             {
-                throw new Exception();
+                return;
             }
             else
             {

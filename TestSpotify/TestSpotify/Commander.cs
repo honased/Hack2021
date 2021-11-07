@@ -61,7 +61,7 @@ namespace TestSpotify
                                 goal = ParseGoal.PlaySong;
                             }
                         }
-                        if(token == "queue")
+                        else if(token == "queue")
                         {
                             if (tokens.Length - i <= 1) return;
                             else
@@ -70,11 +70,15 @@ namespace TestSpotify
                                 goal = ParseGoal.QueueSong;
                             }
                         }
-                        if(token == "skip")
+                        else if(token == "skip")
                         {
                             await SpotifyCommands.SkipSong();
                             return;
 
+                        }
+                        else
+                        {
+                            builder.Append(token + " ");
                         }
                         break;
 
@@ -125,6 +129,7 @@ namespace TestSpotify
             {
                 case ParseGoal.None:
                     // Do nothing
+                    await SpotifyCommands.PlaySong(builder.ToString().Trim().ToLower(), null);
                     break;
 
                 case ParseGoal.PlaySong:

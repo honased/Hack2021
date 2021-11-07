@@ -1,23 +1,30 @@
-﻿using System;
+﻿using SpotifyAPI.Web;
+using System;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using TestSpotify;
 
 namespace TestMic
 {
     class Program
     {
-        [DllImport("winmm.dll", EntryPoint = "mciSendStringA", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
-        private static extern int mciSendString(string lpstrCommand, string lpstrReturnString, int uReturnLength, int hwndCallback);
-
-        static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            mciSendString("open new Type waveaudio Alias recsound", "", 0, 0);
-            mciSendString("record recsound", "", 0, 0);
-            Console.WriteLine("recording, press Enter to stop and save ...");
-            Console.ReadLine();
+            var spotify = new SpotifyClient("BQBoZn4C4aWQJnQ_GANP65Y2k78cLQ-kHJu_S9yh9H5jIehim9uCnQVP2rwpy_GeEBeKdbshTH2PLtt4o_DvuVsmMOuXAstiX3kN5N_xDZEE1ttVbNafzhL-_5luJ9_pnQNRPhXsToiE8I6RIdBmWSpfKezjJ2JAWJZ7qYyxedJQovvIi06Qx94knBg_OjNXzx-ih1wI4uIUSzy2tWe_CZzhRogz7qWDTce4CrZGjYdfZb-Uv55jXOE");
+            SpotifyCommands.Initialize(spotify);
 
-            mciSendString("save recsound result.wav", "", 0, 0);
-            mciSendString("close recsound ", "", 0, 0);
+            //await Commander.Command("Play Brexit in America");
+
+            while (true)
+            {
+                Console.WriteLine("Press enter to issue a command");
+                Console.ReadLine();
+                await SpotifyCommands.SetPlaying(false);
+                string text = await SpeechToText.GetText();
+                Console.WriteLine("Command issued: " + text);
+                await Commander.Command(text);
+            }
         }
     }
 }

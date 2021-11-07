@@ -5,6 +5,7 @@ using System;
 using System.Net.WebSockets;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -47,7 +48,7 @@ namespace TestMic
                     await socket.SendAsync(sendBytes, WebSocketMessageType.Text, true, CancellationToken.None);
 
                     await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
-                    return text;
+                    return Regex.Replace(text, "[^A-Za-z -]", "");
                 }
                 return "";
                 //Console.WriteLine("Closed");
